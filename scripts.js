@@ -262,3 +262,10 @@ async function getUsers(){
 }
 // call our async function and handle the returned promise 
 // TO DO - Complete the code to handle the data returned from the API and display the returned data on the page in the correct place
+
+getUsers()
+    .then (json => {
+        console.log(json);
+        displayUsers("userPage2","pagination2", json)
+    })
+    .catch( e => console.error(e));
