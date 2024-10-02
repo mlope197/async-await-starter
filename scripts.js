@@ -29,7 +29,7 @@ function displayUsers(output, id, data){
         } else if(i<6)     {
             page2.push(data.results[i]);
         }else if(i<9)     {
-            page2.push(data.results[i]);
+            page3.push(data.results[i]);
         }else     {
             page4.push(data.results[i]);
         }
