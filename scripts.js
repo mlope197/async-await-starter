@@ -26,9 +26,9 @@ function displayUsers(output, id, data){
     for(let i = 0; i < 12; i++){
         if(i<3){
             page1.push(data.results[i]);
-        } else if(i<6)     {
+        } else if(i<6){
             page2.push(data.results[i]);
-        }else if(i<9)     {
+        }else if(i<9){  
             page3.push(data.results[i]);
         }else     {
             page4.push(data.results[i]);
@@ -254,10 +254,11 @@ async function getUsers(){
     //fetch from server
     let response = await fetch ("https://randomuser.me/api/?results=12&nat=us,gb");
 
+    //if there is an error, throw the error response, 0
     if(response.error){
         throw new Error(`${response.error}`);
     }
-
+    //return json if no errors
     return await response.json();
 }
 // call our async function and handle the returned promise 
@@ -266,6 +267,6 @@ async function getUsers(){
 getUsers()
     .then (json => {
         console.log(json);
-        displayUsers("userPage2","pagination2", json)
+        displayUsers("userPage2","pagination2", json);
     })
     .catch( e => console.error(e));
